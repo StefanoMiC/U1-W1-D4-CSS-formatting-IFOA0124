@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il box model</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            vertical-align: middle;
+            /* vertical align middle va usato in combinazione con inline-block per determinare 
+            l'allineamento verticale in caso in cui i due elementi inline-block abbiano contenuto 
+            testuale o pseudo tale che non si allinea come vorremmo */
+            margin-right: -4px;
+
+        }
+
+        .aqua {
+            background-color: aqua;
+        }
+
+        .coral {
+            background-color: coral;
+        }
+
+        .antique {
+            background-color: antiquewhite;
+        }
+
+        /* senza box-sizing aggiungere border o padding aumenterà la dimensione totale dell'elemento */
+        /* .box.aqua {
+            border: 3px solid black;
+            width: 94px;
+            height: 94px;
+            padding: 10px;
+        } */
+
+        li {
+            display: inline-block;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        .w-33 {
+            width: 33.333%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box aqua w-33"><img
+            src="https://images.unsplash.com/photo-1682685797277-f2bf89b24017?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width="120" /></div>
+    <div class="box coral w-33">ipsum</div>
+    <div class="box antique w-33"></div>
+
+    <p>Lorem <strong>ipsum dolor</strong> sit amet consectetur adipisicing elit. <img
+            src="https://images.unsplash.com/photo-1682685797277-f2bf89b24017?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width="120" />Earum,
+        exercitationem fugit? Libero corporis ipsam
+        beatae commodi inventore ipsum et distinctio! Eum necessitatibus numquam porro, perspiciatis velit facilis odit
+        incidunt impedit.</p>
+
+    <!-- 
+    <div class="coral">
+        <img src="https://images.unsplash.com/photo-1682685797277-f2bf89b24017?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width="120" />
+    </div>
+
+    <ul>
+        <li>testo</li>
+        <li>testo</li>
+        <li>testo</li>
+        <li>testo</li>
+    </ul> -->
+</body>
+
+</html>

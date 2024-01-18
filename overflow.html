@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Managing overflows</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: aquamarine;
+            height: 200px;
+            /* quando il contenuto è più grande del contenitore (solo se hai forzato l'altezza!) occorrerà gestire il cosiddetto overflow */
+            /* evitiamo l'uso del valore scroll perché per alcuni utenti potrebbe generare scrollbar anche nella direzione in cui non serve */
+
+            /* il valore più corretto da usare se vuoi creare un'area scrollabile è "auto" */
+            overflow: auto;
+        }
+
+        .secondary {
+            height: 200px;
+            background-color: purple;
+
+            width: 600px;
+            margin-inline: auto;
+        }
+
+        .secondary img {
+            /* max-width: 100%; */
+            /* max width lo usiamo solamente per dare un limite massimo all'immagine che eventualmente si scalerà verso il basso (riducendosi solamente, non può aumentare!) */
+
+            /* questa è una tecnica che ci permette di inserire una qualsiasi immagine in qualunque contesto o forma,
+             permettendo all'immagine di coprire l'area interessata e rimanere proporzionata */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 70%;
+        }
+
+        .tertiary-container {
+            text-align: right;
+        }
+
+        .tertiary {
+            height: 200px;
+            background-color: darkgoldenrod;
+            background-image: radial-gradient(circle, rgba(63, 94, 251, 0) 0%, rgba(252, 70, 107, 1) 100%), url(https://images.unsplash.com/photo-1705179573286-495f1b4fabaf?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+
+            color: white;
+
+            width: 60%;
+            display: inline-block;
+        }
+
+        .gradient,
+        .shadow {
+            height: 300px;
+        }
+
+        .gradient {
+
+            background-image: linear-gradient(to bottom, green, yellow, blue)
+        }
+
+        .shadow {
+            background-color: #2196f3;
+            width: 300px;
+            margin-inline: auto;
+            margin-block: 3rem;
+            box-shadow: 0px 20px 20px 0px rgb(0 0 0 / 20%), 0px 4px 12px -2px rgb(0 0 0 / 30%);
+
+
+        }
+
+        .shadow:hover {
+            background-color: #f3e921;
+            box-shadow: 0px 30px 40px 0px rgb(0 0 0 / 60%), 0px 8px 24px -4px rgb(0 0 0 / 80%);
+            cursor: pointer;
+        }
+
+        .shadow:active {
+            background-color: #f32121;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore odio voluptate possimus aperiam placeat aliquam
+        eveniet earum quae, delectus architecto, excepturi perspiciatis voluptatum, recusandae iusto magnam provident
+        corrupti rem deleniti.
+        Minima iusto, dignissimos nulla quam, maiores ipsum provident officiis sit placeat dolorem excepturi,
+        accusantium id officia deserunt molestiae molestias maxime ex enim! Quibusdam minus deserunt voluptatem soluta
+        asperiores tempore non!
+        Facere corporis voluptas earum magni exercitationem vero asperiores iusto quod nisi assumenda optio praesentium
+        omnis, repellendus dolor dignissimos quam fugiat consequuntur. Magni beatae ipsam doloribus quas rem nihil cum
+        fuga.
+        Iste dolorem similique sed praesentium, voluptas quod repudiandae quidem. Voluptatibus assumenda et vitae animi
+        minus obcaecati amet delectus accusamus in, eligendi sunt eum modi suscipit, perferendis fuga recusandae quam
+        id?
+        Recusandae saepe nesciunt ab reprehenderit quidem vero necessitatibus. Magnam nam culpa corrupti rem. Fugiat
+        doloribus minima minus. Cum, dolor aut. Odit nulla quos excepturi! Voluptates placeat iste amet accusamus ipsam.
+        Expedita reprehenderit molestiae iste ipsum, impedit optio cumque sed illum, maxime, dolorum fugit. Nesciunt
+        cupiditate aut vero doloribus quo, facere sit excepturi totam minus, beatae voluptas accusantium delectus quia?
+        Blanditiis.
+        Velit qui quam sed, repudiandae voluptatum dolorem voluptatem ad architecto culpa aliquid nihil sint facilis,
+        consectetur soluta doloremque. Dolor esse minus ut odit optio vitae nihil quae, inventore architecto natus!
+        Perferendis vero accusamus excepturi eveniet quis, ipsa ipsum corporis vel, obcaecati quos, asperiores quas.
+        Pariatur amet est voluptates vitae perferendis, exercitationem reiciendis quas aperiam voluptatibus porro
+        placeat quae? Fugiat, aperiam!
+        Quisquam nulla aliquam totam veniam impedit velit soluta architecto adipisci tenetur, accusamus, tempore quod
+        laboriosam reprehenderit excepturi iure quae alias? Ratione voluptatibus maxime, adipisci ipsam corporis
+        facilis! Sed, hic excepturi.
+        Tenetur corrupti beatae doloribus, sapiente deserunt facilis dolore quasi quas, eligendi est dolorum repellat
+        officia ipsa sequi praesentium maiores adipisci at quae fuga repudiandae unde incidunt et eveniet! Expedita,
+        nam.
+    </main>
+
+    <div class="secondary">
+
+        <!-- <h3>Secondary</h3> -->
+        <!-- questo elemento scombinerebbe il layout -->
+        <img
+            src="https://images.unsplash.com/photo-1705436195969-5678d64b9720?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    </div>
+
+    <div class="tertiary-container">
+        <div class="tertiary">
+            <!-- mentre invece un elemento inserito dentro un div con una immagine di background non crea problemi -->
+            <h3>Tertiary</h3>
+        </div>
+    </div>
+
+    <div class="gradient"></div>
+    <div class="shadow"><i class="fas fa-wine-glass-alt"></i></div>
+
+    <script></script>
+</body>
+
+</html>

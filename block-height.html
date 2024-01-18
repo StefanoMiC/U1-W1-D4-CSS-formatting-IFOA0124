@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managing block heights</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: aquamarine;
+            min-height: 100vh;
+            /* con min height riusciamo ad avere la dimensione iniziale che vogliamo (il 100% del viewport), 
+            ma permettiamo al contenitore di ingrandirsi per adattarsi al contenuto qualora questo ne avesse bisogno */
+
+            /* quando abbiamo a che fare con contenitori sarebbe meglio non forzare le altezze (preferire min-height al posto di height) */
+        }
+
+        .secondary {
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore odio voluptate possimus aperiam placeat aliquam
+        eveniet earum quae, delectus architecto, excepturi perspiciatis voluptatum, recusandae iusto magnam provident
+        corrupti rem deleniti.
+        Minima iusto, dignissimos nulla quam, maiores ipsum provident officiis sit placeat dolorem excepturi,
+        accusantium id officia deserunt molestiae molestias maxime ex enim! Quibusdam minus deserunt voluptatem soluta
+        asperiores tempore non!
+        Facere corporis voluptas earum magni exercitationem vero asperiores iusto quod nisi assumenda optio praesentium
+        omnis, repellendus dolor dignissimos quam fugiat consequuntur. Magni beatae ipsam doloribus quas rem nihil cum
+        fuga.
+        Iste dolorem similique sed praesentium, voluptas quod repudiandae quidem. Voluptatibus assumenda et vitae animi
+        minus obcaecati amet delectus accusamus in, eligendi sunt eum modi suscipit, perferendis fuga recusandae quam
+        id?
+        Recusandae saepe nesciunt ab reprehenderit quidem vero necessitatibus. Magnam nam culpa corrupti rem. Fugiat
+        doloribus minima minus. Cum, dolor aut. Odit nulla quos excepturi! Voluptates placeat iste amet accusamus ipsam.
+        Expedita reprehenderit molestiae iste ipsum, impedit optio cumque sed illum, maxime, dolorum fugit. Nesciunt
+        cupiditate aut vero doloribus quo, facere sit excepturi totam minus, beatae voluptas accusantium delectus quia?
+        Blanditiis.
+        Velit qui quam sed, repudiandae voluptatum dolorem voluptatem ad architecto culpa aliquid nihil sint facilis,
+        consectetur soluta doloremque. Dolor esse minus ut odit optio vitae nihil quae, inventore architecto natus!
+        Perferendis vero accusamus excepturi eveniet quis, ipsa ipsum corporis vel, obcaecati quos, asperiores quas.
+        Pariatur amet est voluptates vitae perferendis, exercitationem reiciendis quas aperiam voluptatibus porro
+        placeat quae? Fugiat, aperiam!
+        Quisquam nulla aliquam totam veniam impedit velit soluta architecto adipisci tenetur, accusamus, tempore quod
+        laboriosam reprehenderit excepturi iure quae alias? Ratione voluptatibus maxime, adipisci ipsam corporis
+        facilis! Sed, hic excepturi.
+        Tenetur corrupti beatae doloribus, sapiente deserunt facilis dolore quasi quas, eligendi est dolorum repellat
+        officia ipsa sequi praesentium maiores adipisci at quae fuga repudiandae unde incidunt et eveniet! Expedita,
+        nam.
+    </main>
+
+    <div class="secondary"></div>
+</body>
+
+</html>
